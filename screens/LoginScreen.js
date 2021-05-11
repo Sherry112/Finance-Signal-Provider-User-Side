@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
-import * as Yup from 'yup';
+import React, { useState } from "react";
+import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
+import * as Yup from "yup";
 
-import Colors from '../utils/colors';
-import SafeView from '../components/SafeView';
-import Form from '../components/Forms/Form';
-import FormField from '../components/Forms/FormField';
-import FormButton from '../components/Forms/FormButton';
-import IconButton from '../components/IconButton';
-import { loginWithEmail } from '../components/Firebase/firebase';
-import FormErrorMessage from '../components/Forms/FormErrorMessage';
-import useStatusBar from '../hooks/useStatusBar';
+import Colors from "../utils/colors";
+import SafeView from "../components/SafeView";
+import Form from "../components/Forms/Form";
+import FormField from "../components/Forms/FormField";
+import FormButton from "../components/Forms/FormButton";
+import IconButton from "../components/IconButton";
+import { loginWithEmail } from "../components/Firebase/firebase";
+import FormErrorMessage from "../components/Forms/FormErrorMessage";
+import useStatusBar from "../hooks/useStatusBar";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
-    .required('Please enter a registered email')
+    .required("Please enter a registered email")
     .email()
-    .label('Email'),
+    .label("Email"),
   password: Yup.string()
     .required()
-    .min(6, 'Password must have at least 6 characters')
-    .label('Password')
+    .min(6, "Password must have at least 6 characters")
+    .label("Password"),
 });
 
 export default function LoginScreen({ navigation }) {
-  useStatusBar('light-content');
+  useStatusBar("light-content");
 
   const [passwordVisibility, setPasswordVisibility] = useState(true);
-  const [rightIcon, setRightIcon] = useState('eye');
-  const [loginError, setLoginError] = useState('');
+  const [rightIcon, setRightIcon] = useState("eye");
+  const [loginError, setLoginError] = useState("");
 
   function handlePasswordVisibility() {
-    if (rightIcon === 'eye') {
-      setRightIcon('eye-off');
+    if (rightIcon === "eye") {
+      setRightIcon("eye-off");
       setPasswordVisibility(!passwordVisibility);
-    } else if (rightIcon === 'eye-off') {
-      setRightIcon('eye');
+    } else if (rightIcon === "eye-off") {
+      setRightIcon("eye");
       setPasswordVisibility(!passwordVisibility);
     }
   }
@@ -53,9 +53,9 @@ export default function LoginScreen({ navigation }) {
   return (
     <SafeView style={styles.container}>
       <Form
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ email: "", password: "" }}
         validationSchema={validationSchema}
-        onSubmit={values => handleOnLogin(values)}
+        onSubmit={(values) => handleOnLogin(values)}
       >
         <FormField
           name="email"
@@ -77,11 +77,11 @@ export default function LoginScreen({ navigation }) {
           rightIcon={rightIcon}
           handlePasswordVisibility={handlePasswordVisibility}
         />
-        <FormButton title={'Login'} />
+        <FormButton title={"Login"} />
         {<FormErrorMessage error={loginError} visible={true} />}
       </Form>
       <View style={styles.footerButtonContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+        <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
           <Text style={styles.forgotPasswordButtonText}>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
@@ -99,20 +99,20 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: Colors.mediumGrey
+    backgroundColor: "#FFFFF0",
   },
   footerButtonContainer: {
     marginVertical: 15,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: "center",
+    alignItems: "center",
   },
   forgotPasswordButtonText: {
     color: Colors.white,
     fontSize: 18,
-    fontWeight: '600'
+    fontWeight: "600",
   },
   backButton: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

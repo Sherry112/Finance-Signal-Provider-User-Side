@@ -134,7 +134,7 @@ export default function RegisterScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: Colors.mediumGrey
+    backgroundColor: "#FFFFF0"
   },
   backButton: {
     justifyContent: 'center',
