@@ -36,11 +36,11 @@ Main screens:
 
 ![Forgot Password](https://i.imgur.com/HDvQMfp.png)
 
-![Authentication Functionality](https://imgur.com/GTJk3Xb)
+![Authentication Functionality](https://imgur.com/gallery/L8UWsGK)
 
-![Stocks from Firebase Backend](https://imgur.com/a/Ilq4sJn)
+![Stocks from Firebase Backend](https://imgur.com/gallery/Ilq4sJn)
 
-![Expo Notifications on firebase updates](https://imgur.com/a/NLkahLJ)
+![Expo Notifications on firebase updates](https://imgur.com/gallery/vmqtfAO)
 ## ⚠️⚠️⚠️
 
 This project is for the final user. The project for the Expert Singal Provider is here (https://github.com/Sherry112/Finance-Signal-Provider--Expert-App)
