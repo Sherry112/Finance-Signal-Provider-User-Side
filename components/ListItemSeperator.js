@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   listItemSeperator: {
     width: "100%",
     height: 8,
-    backgroundColor: colors.yellow,
+    backgroundColor: "#C5E1A5",
   },
 });
 export default ListItemSeperator;

@@ -20,9 +20,7 @@ function ExpertsListScreen(props) {
       <Image style={styles.expert} source={require("../assets/orion.jpg")} />
 
       <Text style={styles.higlight}>You can reach out to me at : </Text>
-      <TouchableOpacity
-        onPress={() => Linking.openURL("tel://+1 646 972 5554")}
-      >
+      <TouchableOpacity onPress={() => Linking.openURL("sms:+1 646 972 5554")}>
         <Text style={styles.number}> +1 646 972 5554</Text>
       </TouchableOpacity>
     </Screen>

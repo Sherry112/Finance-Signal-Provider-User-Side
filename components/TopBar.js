@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableWithoutFeedback } from "react-native";
 import { SimpleLineIcons, MaterialCommunityIcons } from "@expo/vector-icons";
+import colors from '../utils/colors'
 function TopBar({ expertOnPress }) {
   return (
     <View style={styles.container}>
@@ -30,7 +31,7 @@ function TopBar({ expertOnPress }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    backgroundColor: "green",
+    backgroundColor: "#8BC34A",
     alignItems: "center",
     height: 70,
     width: "100%",

@@ -78,12 +78,15 @@ function MainScreen({ navigation }) {
             onPress={() =>
               navigation.navigate("Details", {
                 item,
-                profitLoss: item.result
-                  ? Number(item.result).toFixed(1)
-                  : "---",
+                profitLoss:
+                  item.result === "---"
+                    ? "---"
+                    : Number(item.result).toFixed(1),
               })
             }
-            profitLoss={item.result ? Number(item.result).toFixed(1) : "---"}
+            profitLoss={
+              item.result === "---" ? "---" : Number(item.result).toFixed(1)
+            }
             status={item.status}
             stockName={item.stockName}
             tradeType={item.tradeType.label}
